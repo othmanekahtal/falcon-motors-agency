@@ -1,0 +1,93 @@
+.footer {
+  background-color: $black-color;
+  color: $gray-light-color;
+  position: relative;
+
+  &__top-part {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    & > * {
+      font-size: 2.25rem;
+    }
+    .find-us {
+      flex-basis: 60%;
+      padding-left: 7.5rem;
+      a {
+        color: $primary-color;
+        font-weight: $medium-weight;
+        border-bottom: 2px solid transparent;
+        transition: all 0.35s ease-in-out;
+        &:hover {
+          border-bottom-color: $primary-color;
+        }
+      }
+    }
+    .phone {
+      flex-basis: 40%;
+      padding: 2.5rem;
+      background: linear-gradient(
+        to right bottom,
+        $primary-color,
+        rgba($secondary-color, 0.1)
+      );
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &__bottom-part {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10rem 0;
+    padding-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 7.5rem;
+    .logo-box-footer {
+      justify-self: flex-start;
+      height: 15rem;
+      display: block;
+      img {
+        height: 100%;
+      }
+    }
+    .footer-user-info {
+      place-self: center;
+      .footer-user-link {
+        display: flex;
+        gap: 4.5rem;
+        align-items: center;
+        justify-content: center;
+        a {
+          font-weight: $semi-bold-weight;
+          border-bottom: 2px solid transparent;
+          padding: 0.5rem;
+          transition: border 0.35s ease-in-out;
+          &:hover {
+            border-bottom-color: $gray-light-color;
+          }
+        }
+      }
+    }
+    .footer__copyright {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      .designer-copyright {
+        padding-right: 7.5vw;
+        a {
+          border-bottom: 1px solid transparent;
+          font-weight: $light-weight;
+          padding-bottom: 0.5rem;
+          transition: border 0.35s ease-in-out;
+          &:hover {
+            border-bottom-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

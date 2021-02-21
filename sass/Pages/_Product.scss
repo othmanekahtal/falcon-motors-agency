@@ -1,0 +1,101 @@
+.header-Product {
+  background-image: url("../images/background/product-background.jpg");
+  background-size: cover;
+}
+.section-reservation {
+  display: grid;
+  grid-template-columns:
+    [start_first_gutter] minmax(4.5rem, 1fr)
+    [end_first_gutter start-grid] repeat(
+      4,
+      [start-column] minmax(min-content, 40rem) [end-column]
+    )
+    [end-grid start_second_gutter] minmax(4.5rem, 1fr) [end_second_gutter];
+}
+.reservation-box {
+  margin: 10rem 0;
+  grid-column: start-grid / end-grid;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25rem, 1fr));
+  grid-gap: 4.5rem;
+}
+.motor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    $secondary-color,
+    rgba($primary-color, 0.2)
+  );
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  &_img {
+    width: 35rem;
+    height: 20rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &_info_booking {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    width: 60%;
+  }
+  &_infos {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem;
+
+    li {
+      color: $gray-light-color;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &_name {
+    font-size: 3.5rem;
+    font-weight: $bold-weight;
+    color: $black-color !important;
+  }
+  &_company {
+    display: flex;
+    align-items: center;
+  }
+}
+.type_motors {
+  justify-self: center;
+  width: 80%;
+  grid-column: start-grid / end-grid;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  margin: 2rem 0;
+  margin-top: 7.5rem;
+  border-radius: 5rem;
+  overflow: hidden;
+  background-color: $gray-light-color;
+  .type {
+    text-align: center;
+    padding: 2rem;
+    cursor: pointer;
+    &.active_type {
+      color: $gray-light-color;
+      background-color: $primary-color;
+    }
+    &:first-of-type,
+    &:last-of-type {
+      padding: 2rem 4rem;
+    }
+  }
+}

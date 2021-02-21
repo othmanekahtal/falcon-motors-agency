@@ -1,0 +1,27 @@
+.navbar {
+  padding: 1.4rem;
+  & ul {
+    padding: 1rem 1.5rem;
+    margin: 0 auto;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li.logo-bar {
+      margin-top: 15px;
+      flex-basis: 4.5rem;
+    }
+    li {
+      a {
+        padding-bottom: 0.5rem;
+        color: inherit;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+.active a {
+  color: $primary-color !important;
+  font-weight: $bold-weight !important;
+}

@@ -1,0 +1,434 @@
+@mixin responsive($breakpoint) {
+  @if ($breakpoint== "break_1") {
+    @media only screen and (max-width: 90.3125em) {
+      // 1445px = 90.3125em
+      @content;
+    }
+  }
+  @if ($breakpoint== "break_2") {
+    @media only screen and (max-width: 82.8125em) {
+      // 1318px = 82.8125em
+      @content;
+    }
+  }
+  @if ($breakpoint== "break_3") {
+    @media only screen and (max-width: 71.5625em) {
+      // 1145px = 71.5625em
+      @content;
+    }
+  }
+  @if ($breakpoint== "break_4") {
+    @media only screen and (max-width: 65.3125em) {
+      //1045px = 65.3125em
+      @content;
+    }
+  }
+  @if ($breakpoint == "break_5") {
+    @media only screen and(max-width:50em) {
+      // 800px = 50em
+      @content;
+    }
+  }
+  @if ($breakpoint== "break_6") {
+    @media only screen and (max-width: 41.25em) {
+      //   660px = 41.25em
+      @content;
+    }
+  }
+  @if ($breakpoint== "break_7") {
+    @media only screen and (max-width: 27em) {
+      // 27em = 423px
+      @content;
+    }
+  }
+}
+
+// rem config :
+html {
+  @include responsive("break_1") {
+    font-size: 60%;
+  }
+  @include responsive("break_3") {
+    font-size: 55%;
+  }
+  @include responsive("break_5") {
+    font-size: 45%;
+  }
+  @include responsive("break_6") {
+    font-size: 40%;
+  }
+}
+// responsive typography :
+@include responsive("break_1") {
+  .primary-heading {
+    font-size: 5.75rem;
+  }
+  .secondary-heading {
+    font-size: 4rem;
+  }
+  .third-heading {
+    font-size: 3.25rem;
+  }
+}
+@include responsive("break_2") {
+  p,
+  .phone,
+  .feature-desc {
+    font-size: 2.1rem !important;
+  }
+  .secondary-heading {
+    font-size: 3.25rem;
+  }
+}
+@include responsive("break_7") {
+  p {
+    margin: 1rem 0 !important;
+  }
+}
+
+// home page responsive rules :
+@include responsive("break_1") {
+  .section__chosing-us .chosing-us__desc {
+    padding: 5rem;
+  }
+  .footer {
+    &__top-part {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      & > * {
+        font-size: 2.25rem;
+      }
+      .find-us {
+        flex-basis: 50%;
+        padding-left: 7.5rem;
+      }
+      .phone {
+        flex-basis: 50%;
+      }
+    }
+    &__bottom-part {
+      .footer-user-info {
+        place-self: flex-start !important;
+      }
+    }
+  }
+}
+@include responsive("break_2") {
+  .header .header-content {
+    width: 65%;
+    transform: translate(-50%, -50%);
+  }
+  .section__chosing-us .chosing-feature .feature {
+    margin-bottom: 1.75rem;
+  }
+}
+@include responsive("break_4") {
+  .section__chosing-us {
+    background-color: #020202;
+    display: flex;
+    align-items: center;
+    color: white;
+    .chosing-cover {
+      flex-basis: 35%;
+    }
+    .chosing-us__desc {
+      flex-basis: 70%;
+      padding-left: 2.25rem !important;
+    }
+  }
+  .category > div {
+    flex-basis: 50% !important;
+  }
+  .footer__bottom-part .footer-user-info {
+    width: 80%;
+    text-align: center;
+  }
+}
+@include responsive("break_5") {
+  .header .header-content {
+    width: 85%;
+  }
+  .category {
+    padding: 6.5rem 0;
+  }
+  .header-social-media {
+    top: unset;
+    right: -8.5vw;
+    bottom: 12.5%;
+  }
+  .footer-social-media {
+    right: -8.5vw;
+  }
+  .companies-logo-container {
+    padding: 10rem 5rem !important;
+  }
+  .footer__top-part {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    & > * {
+      padding-left: unset !important;
+    }
+  }
+}
+@include responsive("break_6") {
+  .header-social-media,
+  .footer-social-media {
+    transform: rotate(0) !important;
+    right: 1.5vw;
+    bottom: 1.5vh;
+    a {
+      transform: rotate(0);
+    }
+  }
+  .company-logo {
+    height: 2.5rem !important;
+  }
+  .footer-social-media {
+    margin: 5rem;
+    position: static;
+    justify-content: center;
+  }
+  .section__chosing-us {
+    flex-direction: column;
+    position: relative;
+  }
+  .chosing-cover {
+    filter: blur(10px) grayscale(65%);
+  }
+  .chosing-us__desc {
+    padding: 0 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85% !important;
+  }
+  .section-fleet {
+    margin-top: 0;
+    h2 {
+      padding-top: unset;
+    }
+    .category:nth-of-type(2n),
+    .category:nth-of-type(odd) {
+      flex-direction: column;
+      align-items: flex-start;
+      .category-info {
+        padding-left: 5rem !important;
+      }
+    }
+  }
+  .companies-logo-container {
+    padding: 5rem !important;
+  }
+  .footer__bottom-part {
+    padding: unset;
+    grid-row-gap: 5rem;
+  }
+  .logo-box-footer {
+    height: 10rem !important;
+    place-self: center !important;
+    grid-column: 1 / -1;
+  }
+  .footer__bottom-part .footer-user-info {
+    grid-column: 1 / -1;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+@include responsive("break_7") {
+  .navbar {
+    padding: unset;
+    padding-top: 5vw;
+    ul {
+      padding: unset;
+      .logo-bar {
+        flex-basis: 5rem !important;
+        margin-top: unset !important;
+      }
+    }
+  }
+  .header-btns {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    a {
+      align-self: stretch;
+    }
+  }
+  .section-fleet .btn {
+    margin-top: 1.5rem;
+  }
+  .chosing-us__desc {
+    width: 100% !important;
+  }
+  .social-media-box {
+    a {
+      width: 1.5rem;
+      padding: 5px;
+      height: 1.5rem;
+      svg {
+        transform: translateY(-2px);
+      }
+    }
+  }
+  .section__chosing-us .chosing-feature {
+    margin-top: 0;
+  }
+  .section__chosing-us .chosing-feature .feature {
+    margin-bottom: 1rem;
+  }
+  .footer-user-link {
+    flex-direction: column;
+    gap: 1rem !important;
+    list-style-type: none;
+  }
+  .footer__copyright {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .designer-copyright {
+      margin-top: 2.5rem;
+      padding: unset !important;
+      padding-bottom: 10px;
+    }
+  }
+}
+// agency page responsive rules :
+@include responsive("break_2") {
+  .section-local {
+    .local-iframe {
+      width: 100%;
+    }
+  }
+}
+@include responsive("break_3") {
+  .section-local {
+    padding: 5rem;
+  }
+}
+@include responsive("break_5") {
+  .section-local {
+    & > * {
+      grid-column: 1 / -1;
+    }
+    .local-addresses {
+      place-self: center;
+      .third-heading.heading-line::before {
+        width: 13rem;
+      }
+    }
+  }
+}
+// product page responsive :
+@include responsive("break_1") {
+  .section-reservation {
+    .motor_img {
+      width: 25rem;
+      height: 15rem;
+    }
+  }
+}
+@include responsive("break_2") {
+  .motor {
+    &_name {
+      font-size: 3rem;
+    }
+    background-size: 85%;
+    &_info_booking {
+      width: 85% !important;
+    }
+  }
+}
+@include responsive("break_7") {
+  .type_motors {
+    width: 100%;
+    flex-direction: column;
+  }
+  .reservation-box {
+    grid-template-columns: repeat(1, minmax(25rem, 1fr)) !important;
+    .motor_img {
+      width: 38rem !important;
+      height: 27.5rem !important;
+    }
+  }
+}
+
+.reservation-box {
+  @include responsive("break_3") {
+    grid-template-columns: repeat(3, minmax(25rem, 1fr));
+  }
+  @include responsive("break_5") {
+    grid-template-columns: repeat(2, minmax(25rem, 1fr));
+  }
+}
+@include responsive("break_4") {
+  .type_motors {
+    width: 100%;
+  }
+}
+@include responsive("break_5") {
+  .type_motors {
+    flex-wrap: wrap;
+  }
+  .motor {
+    background-size: 95%;
+    &_info_booking {
+      width: 90% !important;
+    }
+  }
+}
+// icon responsive :
+.section__chosing-us .chosing-feature .feature-icon {
+  @include responsive("break_2") {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  @include responsive("break_4") {
+    width: 3rem;
+    height: 3rem;
+  }
+  @include responsive("break_7") {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+// popup responsive :
+.popup-box {
+  @include responsive("break_6") {
+    width: 95%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  .popUp-form form {
+    width: 100% !important;
+    @include responsive("break_6") {
+      .two-in-one-field {
+        flex-direction: column;
+        .input__group {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include responsive("break_6") {
+  .popup-reservation {
+    .popup-box {
+      height: unset !important;
+    }
+  }
+  .input_reservation {
+    text-align: center;
+    input {
+      margin: unset;
+      width: 80%;
+      margin-right: unset !important;
+      margin-bottom: 2.5rem;
+      &:last-child {
+        margin: unset !important;
+      }
+    }
+  }
+}

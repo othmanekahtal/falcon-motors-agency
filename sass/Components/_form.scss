@@ -1,0 +1,89 @@
+input {
+  outline: none;
+  border: none;
+}
+
+.form {
+  width: 80%;
+  margin: 0 auto;
+  .two-in-one-field {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .input__group {
+      flex-basis: 50%;
+    }
+  }
+}
+
+.input {
+  &__group {
+    margin-bottom: 2rem;
+
+    .label__form {
+      color: white;
+      display: inline-block;
+      font-size: 1.5rem;
+      padding-left: 1.5rem;
+      padding-top: 1.5rem;
+      transition: all 0.25s ease-in-out;
+      font-weight: $bold-weight;
+      pointer-events: none;
+    }
+  }
+  &__message {
+    height: 25rem;
+  }
+  &__form {
+    border: none;
+    outline: none;
+    box-sizing: border-box !important;
+    width: 100%;
+    padding: 2rem 0 2rem 1.5rem;
+    border-radius: 4px;
+    border-bottom: 4px solid transparent;
+    transition: border 0.45s;
+    font-family: inherit;
+    font-weight: $medium-weight;
+    &::placeholder {
+      font-family: "Dosis", sans-serif;
+      font-size: 1.5rem;
+      font-weight: $medium-weight;
+    }
+    &:required {
+      box-shadow: none;
+    }
+    &:focus:invalid {
+      border-bottom-color: $gray-color;
+    }
+    &:focus {
+      border-bottom-color: $primary-color;
+      box-shadow: 0 0 5px rgba($secondary-color, 0.5);
+    }
+    &:placeholder-shown ~ .label__form {
+      opacity: 0;
+      transform: translateY(-5rem);
+    }
+  }
+}
+.popup .input__group-button {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: flex-start;
+}
+.date_picker {
+  width: 25rem;
+  padding: 1.2rem 2.5rem;
+  height: 4.5rem;
+  border-radius: 2.5rem;
+  background-color: white;
+  transition: all 0.35s ease-in-out;
+  &:first-of-type {
+    margin-right: 2.5rem;
+  }
+}
+.date_picker:focus {
+  background-color: $gray-light-color;
+  box-shadow: 0 0 5rem rgba($primary-color, 0.5);
+}

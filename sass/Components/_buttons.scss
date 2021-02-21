@@ -1,0 +1,62 @@
+.btn {
+  background-color: transparent;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  align-self: center;
+  display: inline-flex;
+  font-size: 1.8rem;
+  font-family: inherit;
+  font-weight: $bold-weight;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+  svg {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 5px;
+    fill: inherit;
+  }
+
+  &--primary {
+    color: $primary-color;
+    border-color: currentColor;
+    fill: currentColor;
+    &--rounded {
+      border-radius: 2rem;
+    }
+    &:hover {
+      color: $secondary-color;
+    }
+    svg {
+      fill: inherit;
+    }
+    &--white--border {
+      border-color: $gray-light-color;
+    }
+  }
+  &--secondary {
+    color: $gray-light-color;
+    border-color: currentColor;
+    background-color: $primary-color;
+    fill: currentColor;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+  &--white {
+    color: $gray-light-color;
+    border-color: currentColor;
+    fill: currentColor;
+    padding: 0.5rem 1.5rem !important;
+    svg {
+      fill: inherit;
+      margin-right: 0.5rem;
+    }
+  }
+}
