@@ -97,6 +97,7 @@ const calcDate = () => {
   let date_return = new Date(date_picker_return.value);
   let diff_Date =
     (date_return.getTime() - date_pick.getTime()) / (1000 * 60 * 60 * 24);
+
   return diff_Date;
 };
 
@@ -199,7 +200,7 @@ const clickShowItem = (clickedItem, Items, event_type) => {
         document.querySelector(".popup-reservation").style.display = "flex";
         let pop_reservation = document.querySelector(".popup-reservation");
         document
-          .querySelector(".btn_popUp__reserve")
+          .getElementsByClassName("btn_popUp__reserve")[0]
           .addEventListener("click", () => {
             calcDate();
             if (calcDate() > 0) {
